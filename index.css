@@ -7,6 +7,11 @@
 	vertical-align: baseline;
 }
 
+body {
+    height: 100%;
+    overflow:hidden;
+}
+
 /* Simple modifiers */
 .light-text {
 	color: grey;
@@ -69,5 +74,9 @@
 }
 
 .working-area {
-	background-color: #ccc;
+	background: url(images/snow-mountains-background.jpg) center center no-repeat;
+	position: absolute;
+	bottom: 0px;
+	top: 90px;
+	width: 100%;
 }
