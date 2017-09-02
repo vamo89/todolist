@@ -1,13 +1,22 @@
-/* Reset some elements */
-html, body, div, span, ul, li {
-	margin: 0;
+/* Reset css */
+* {
 	padding: 0;
-	border: 0;
+	margin: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
 
+/* Simple modifiers */
+.light-text {
+	color: grey;
+}
+
+.simple-bottom-border {
+	border-bottom: 1px solid grey;
+}
+
+/* Elements */
 .header {
 	background-color: white;
 }
@@ -16,11 +25,24 @@ html, body, div, span, ul, li {
 	height: 40px;
 	display: flex;
 	justify-content: space-between;
-	border-bottom: 1px solid grey;
+}
+
+.header .task-bar *:before {
+	content: ' ';
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
 }
 
 .header .task-bar * {
 	align-self: center;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+}
+
+.header .task-bar span {
+	height: 100%;
 	display: inline-block;
 }
 
@@ -35,14 +57,17 @@ html, body, div, span, ul, li {
 	padding: 2px 5px 2px 15px;
 }
 
-.header .area-context {
-	height: 45px;
-}
-
 .header .area-context .title {
 	text-align: center;
+	font-size: 30px;
+}
+
+.header .area-context .title * {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
 }
 
 .working-area {
-	background-color: grey;
+	background-color: #ccc;
 }
