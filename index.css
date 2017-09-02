@@ -1,0 +1,48 @@
+/* Reset some elements */
+html, body, div, span, ul, li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.header {
+	background-color: white;
+}
+
+.header .task-bar {
+	height: 40px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid grey;
+}
+
+.header .task-bar * {
+	align-self: center;
+	display: inline-block;
+}
+
+.header .task-bar .settings {
+	padding: 10px;
+}
+
+.header .task-bar .searchbox {
+	border-radius: 10px;
+	outline: 0;
+	background: url(images/search.png) left center no-repeat;
+	padding: 2px 5px 2px 15px;
+}
+
+.header .area-context {
+	height: 45px;
+}
+
+.header .area-context .title {
+	text-align: center;
+}
+
+.working-area {
+	background-color: grey;
+}
