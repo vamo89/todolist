@@ -80,6 +80,7 @@ li {
 	outline: 0;
 	background: url(images/search.png) left center no-repeat;
 	padding: 2px 5px 2px 15px;
+	width: 35%;
 }
 
 .header .area-context .title {
