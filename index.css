@@ -5,6 +5,7 @@
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	list-style: none;
 }
 
 /* Minimum acceptable size without scroll */
@@ -19,8 +20,26 @@ body {
 }
 
 .simple-bottom-border {
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid #CCC;
 }
+
+/* Modified elements */
+button {
+	background-color: white;
+	border: 1px solid #33ABF9;
+	color: #33ABF9;
+	padding: 4px;
+	border-radius: 5px;
+	outline: 0;
+}
+
+li {
+	border-bottom: 1px solid #CCC;
+	margin-left: 15px;
+	font-size: 18px;
+	height: 25px;
+}
+
 
 /* Elements */
 .header {
@@ -82,4 +101,47 @@ body {
 	width: 100%;
 	min-width: 600px;
 	min-height: 360px;
+}
+
+.working-area .list, .working-area .edit {
+	background-color: white;
+	min-width: 600px;
+	margin: 15px auto;
+	border-radius: 4px;
+}
+
+.working-area .list {
+	width: 60%;
+}
+
+.working-area .list .list-toolbar {
+	display: flex;
+	justify-content: space-between;
+}
+
+.working-area .list .list-toolbar * {
+	align-self: center;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+	margin: 5px 15px;
+}
+
+.working-area .edit {
+	width: 30%;
+}
+
+.working-area .list-icon {
+	height: 24px;
+	width: 24px;
+}
+
+.working-area .list .task-elem * {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+}
+
+.hide {
+	display: none;
 }
