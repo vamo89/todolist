@@ -53,11 +53,16 @@ var todoService = (function(){
 	}
 
 	function updateTask() {
+		const newTitle = document.getElementById('form-title').value
+		if (!taskOnEdit && !newTitle) {
+			return
+		}
+
 		if (!taskOnEdit) {
 			taskOnEdit = {}
 			tasks.push(taskOnEdit)
 		}
-		taskOnEdit.title = document.getElementById('form-title').value
+		taskOnEdit.title = newTitle
 		taskOnEdit.description = document.getElementById('form-description').value
 
 		saveTasksAndReload()
