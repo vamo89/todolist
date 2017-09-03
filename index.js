@@ -1,5 +1,7 @@
 var todoService = (function(){
 
+	const localStorageKey = 'savedTasks'
+
 	var tasks = [
 		{'title': 'Work it Harder', 'description': ''},
 		{'title': 'Make it Better', 'description': ''},
@@ -57,7 +59,7 @@ var todoService = (function(){
 		taskOnEdit.title = document.getElementById('form-title').value
 		taskOnEdit.description = document.getElementById('form-description').value
 
-		loadTasks()
+		saveTasksAndReload()
 	}
 
 	function updateIfEnter(event) {
@@ -67,6 +69,19 @@ var todoService = (function(){
 	}
 
 	function loadTasks() {
+		let savedTasks = window.localStorage.getItem(localStorageKey)
+		if (savedTasks) {
+			tasks = JSON.parse(savedTasks)
+		}
+		saveTasksAndReload()
+	}
+
+	function saveTasksAndReload() {
+		window.localStorage.setItem(localStorageKey, JSON.stringify(tasks))
+		loadTasksFromList(tasks)
+	}
+
+	function loadTasksFromList(tasks) {
 		let htmlDocList = document.getElementById('tasklist')
 		htmlDocList.innerHTML = ''
 		for (const task of tasks) {
@@ -75,6 +90,7 @@ var todoService = (function(){
 		for (let size = tasks.length; size < 10; size++) {
 			htmlDocList.append(newTaskElement())
 		}
+
 	}
 
 	function createTaskElement(task) {
