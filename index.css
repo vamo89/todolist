@@ -20,24 +20,32 @@ body {
 }
 
 .simple-bottom-border {
-	border-bottom: 1px solid #CCC;
+	border-bottom: 1px solid #ccc;
+}
+
+.simple-top-border {
+	border-top: 1px solid #ccc;
+}
+
+.hide {
+	display: none;
 }
 
 /* Modified elements */
 button {
 	background-color: white;
-	border: 1px solid #33ABF9;
-	color: #33ABF9;
+	border: 1px solid #33abf9;
+	color: #33abf9;
 	padding: 4px;
 	border-radius: 5px;
 	outline: 0;
 }
 
 li {
-	border-bottom: 1px solid #CCC;
+	border-bottom: 1px solid #ccc;
 	margin-left: 15px;
-	font-size: 18px;
-	height: 25px;
+	font-size: 16px;
+	height: 35px;
 }
 
 
@@ -94,7 +102,7 @@ li {
 	line-height: normal;
 }
 
-.working-area {
+.main {
 	background: url(images/snow-mountains-background.jpg) center center no-repeat;
 	position: absolute;
 	bottom: 0px;
@@ -104,15 +112,20 @@ li {
 	min-height: 360px;
 }
 
+.working-area {
+	display: flex;
+	height: fit-content;
+}
+
 .working-area .list, .working-area .edit {
 	background-color: white;
-	min-width: 600px;
 	margin: 15px auto;
 	border-radius: 4px;
 }
 
 .working-area .list {
-	width: 60%;
+	width: 65%;
+	height: fit-content;
 }
 
 .working-area .list .list-toolbar {
@@ -128,21 +141,91 @@ li {
 	margin: 5px 15px;
 }
 
-.working-area .edit {
-	width: 30%;
-}
-
-.working-area .list-icon {
+.working-area .list .task-elem .list-icon {
 	height: 24px;
 	width: 24px;
+	margin-right: 15px;
+}
+
+.working-area .list .task-elem:before {
+	content: ' ';
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
 }
 
 .working-area .list .task-elem * {
+	align-self: center;
 	display: inline-block;
 	vertical-align: middle;
 	line-height: normal;
 }
 
-.hide {
-	display: none;
+.working-area .list.side {
+	width: 55%;
+}
+
+.working-area .edit {
+	width: 40%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.working-area .edit .edit-bar {
+	height: fit-content;
+}
+
+.working-area .edit .edit-bar span {
+	margin: 5px 5px 5px 20px;
+	display: inline-block;
+}
+
+.working-area .edit .edit-bar .close {
+	position: absolute;
+	right: 7px;
+	top: 7px;
+}
+
+.working-area .edit .form {
+	display: flex;
+	flex-direction: column;
+	flex: auto;
+}
+
+.working-area .edit .title, .working-area .edit .description {
+	outline: 0;
+	border: 0;
+	width: 80%;
+}
+
+.working-area .edit .title {
+	font-size: 22px;
+	margin: 10% auto 10px 30px;
+	background: url(images/task.png) left center no-repeat;
+	padding: 5px 10px 5px 36px;
+}
+
+.working-area .edit .description {
+	font-size: 12px;
+	margin: 10px auto auto 66px;
+	resize: none;
+}
+
+.working-area .edit .comments {
+	background-color: #eee;
+	bottom: 0;
+	display: flex;
+}
+
+.working-area .edit .comments * {
+	align-self: flex-start;
+	margin: 10px;
+}
+
+.working-area .edit .comments textarea {
+	resize: none;
+	border: #ccc solid 1px;
+	width: 85%;
 }
