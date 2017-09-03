@@ -27,10 +27,6 @@ body {
 	border-top: 1px solid #ccc;
 }
 
-.hide {
-	display: none;
-}
-
 /* Modified elements */
 button {
 	background-color: white;
@@ -171,6 +167,10 @@ li {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+}
+
+.working-area .edit.hide {
+	display: none;
 }
 
 .working-area .edit .edit-bar {

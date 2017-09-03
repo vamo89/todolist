@@ -31,27 +31,31 @@
 		</div>
 		<div class="main">
 			<div class="working-area">
-				<div class="list side">
+				<div id="list" class="list">
 					<div class="list-toolbar simple-bottom-border">
-						<button>Add Task</button>
+						<button onclick="todoService.addTask()">Add Task</button>
 						<img src="images/config.png">
 					</div>
 					<ul>
-						<li class="task-elem"><img class="list-icon" src="images/task.png">Work it Harder</li>
-						<li class="task-elem"><img class="list-icon" src="images/task.png">Make it better</li>
-						<li class="task-elem"></li>
-						<li class="task-elem"></li>
-						<li class="task-elem"></li>
-						<li class="task-elem"></li>
-						<li class="task-elem"></li>
-						<li class="task-elem"></li>
-						<li class="task-elem"></li>
-						<li class="task-elem"></li>
-						<li class="task-elem"></li>
-						<li class="task-elem"></li>
+						<li class="task-elem" onclick="todoService.editTask()">
+							<img class="list-icon" src="images/task.png">Work it Harder
+						</li>
+						<li class="task-elem" onclick="todoService.editTask()">
+							<img class="list-icon" src="images/task.png">Make it better
+						</li>
+						<li class="task-elem" onclick="todoService.addTask()"></li>
+						<li class="task-elem" onclick="todoService.addTask()"></li>
+						<li class="task-elem" onclick="todoService.addTask()"></li>
+						<li class="task-elem" onclick="todoService.addTask()"></li>
+						<li class="task-elem" onclick="todoService.addTask()"></li>
+						<li class="task-elem" onclick="todoService.addTask()"></li>
+						<li class="task-elem" onclick="todoService.addTask()"></li>
+						<li class="task-elem" onclick="todoService.addTask()"></li>
+						<li class="task-elem" onclick="todoService.addTask()"></li>
+						<li class="task-elem" onclick="todoService.addTask()"></li>
 					</ul>
 				</div>
-				<div class="edit">
+				<div id="edit" class="edit hide">
 					<div class="edit-bar simple-bottom-border">
 						<span>
 							<img src="images/photo.png">
@@ -68,7 +72,7 @@
 							<img src="images/attach.png">
 							<img src="images/showmore.png">
 						</span>
-						<img class="close" src="images/close.png">
+						<img class="close" src="images/close.png" onclick="todoService.closeEditArea()">
 					</div>
 					<div class="form">
 						<input class="title" type="text" placeholder="New Task">
