@@ -1,14 +1,20 @@
 var todoService = (function(){
 
 	var tasks = [
-		{'id': 1, 'title': 'Work it Harder', 'description': ''},
-		{'id': 2, 'title': 'Make it Better', 'description': ''},
+		{'title': 'Work it Harder', 'description': ''},
+		{'title': 'Make it Better', 'description': ''},
 	]
+
+	var taskOnEdit = undefined
 
 	return {
 		closeEditArea: closeEditArea,
+
 		addTask: addTask,
 		editTask: editTask,
+		updateTask: updateTask,
+		updateIfEnter: updateIfEnter,
+
 		loadTasks: loadTasks,
 	}
 
@@ -22,18 +28,47 @@ var todoService = (function(){
 		document.getElementById('edit').classList.remove('hide')
 	}
 
+	function fillEditFields(task) {
+		taskOnEdit = task
+		let title = '', description = ''
+		if (task) {
+			title = task.title
+			description = task.description
+		}
+		document.getElementById('form-title').value = title
+		document.getElementById('form-description').value = description
+	}
+
 	function addTask() {
 		openEditArea()
+		fillEditFields()
 	}
 
 	function editTask(task) {
 		openEditArea()
-		document.getElementById('form-title').value = task.title
-		document.getElementById('form-description').value = task.description
+		fillEditFields(task)
+	}
+
+	function updateTask() {
+		if (!taskOnEdit) {
+			taskOnEdit = {}
+			tasks.push(taskOnEdit)
+		}
+		taskOnEdit.title = document.getElementById('form-title').value
+		taskOnEdit.description = document.getElementById('form-description').value
+
+		loadTasks()
+	}
+
+	function updateIfEnter(event) {
+		if (event.keyCode === 13) {
+			updateTask()
+		}
 	}
 
 	function loadTasks() {
 		let htmlDocList = document.getElementById('tasklist')
+		htmlDocList.innerHTML = ''
 		for (const task of tasks) {
 			htmlDocList.append(createTaskElement(task))
 		}

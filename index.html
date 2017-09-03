@@ -58,8 +58,8 @@
 						<img class="close" src="images/close.png" onclick="todoService.closeEditArea()">
 					</div>
 					<div class="form">
-						<input id="form-title" class="title" type="text" placeholder="New Task">
-						<textarea id="form-description" class="description" rows="3" placeholder="Description"></textarea>
+						<input id="form-title" onblur="todoService.updateTask()" onkeydown="todoService.updateIfEnter(event)" class="title" type="text" placeholder="New Task">
+						<textarea id="form-description" onblur="todoService.updateTask()" onkeydown="todoService.updateIfEnter(event)" class="description" rows="3" placeholder="Description"></textarea>
 					</div>
 					<div class="comments simple-top-border">
 						<img src="images/photo.png">
