@@ -1,13 +1,13 @@
-var todoService = (function(){
+const todoService = (function(){
 
 	const localStorageKey = 'savedTasks'
 
-	var tasks = [
+	let tasks = [
 		{'title': 'Work it Harder', 'description': ''},
 		{'title': 'Make it Better', 'description': ''},
 	]
 
-	var taskOnEdit = undefined
+	let taskOnEdit = undefined
 
 	return {
 		closeEditArea: closeEditArea,
@@ -18,6 +18,8 @@ var todoService = (function(){
 		updateIfEnter: updateIfEnter,
 
 		loadTasks: loadTasks,
+
+		reorderTask: reorderTask,
 	}
 
 	function closeEditArea(task) {
@@ -103,6 +105,10 @@ var todoService = (function(){
 		let li = document.createElement('li')
 		li.classList.add('task-elem')
 		li.onclick = () => todoService.editTask(task)
+		li.draggable = true
+		li.ondragstart = () => dragDrop.dragTask(task)
+		li.ondrop = () => dragDrop.dropTask(task)
+		li.ondragover = () => dragDrop.allowDrop(event)
 
 		let img = document.createElement('img')
 		img.classList.add('list-icon')
@@ -120,6 +126,15 @@ var todoService = (function(){
 		li.onclick = todoService.addTask
 
 		return li
+	}
+
+	function reorderTask(taskToReorder, targetTask) {
+		if (taskToReorder === targetTask) {
+			return
+		}
+		tasks.splice(tasks.indexOf(taskToReorder), 1)
+		tasks.splice(tasks.indexOf(targetTask)+1, 0, taskToReorder)
+		saveTasksAndReload()
 	}
 
 })()

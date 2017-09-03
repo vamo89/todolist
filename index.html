@@ -4,6 +4,7 @@
 		<title>Victor Oliveira - ToDo List</title>
 		<link rel="stylesheet" href="index.css">
 		<script src="index.js" type="text/javascript"></script>
+		<script src="dragdrop.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div class="header">
@@ -36,7 +37,9 @@
 						<button onclick="todoService.addTask()">Add Task</button>
 						<img src="images/config.png">
 					</div>
-					<ul id="tasklist"><!-- Tasks are added on loadTasks call --></ul>
+					<ul id="tasklist">
+						<!-- Tasks are added on loadTasks call -->
+					</ul>
 				</div>
 				<div id="edit" class="edit hide">
 					<div class="edit-bar simple-bottom-border">
