@@ -28,6 +28,7 @@ var todoService = (function(){
 	function openEditArea(task) {
 		document.getElementById('list').classList.add('side')
 		document.getElementById('edit').classList.remove('hide')
+		document.getElementById('form-title').focus()
 	}
 
 	function fillEditFields(task) {
