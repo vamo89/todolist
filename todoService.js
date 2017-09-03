@@ -95,7 +95,11 @@ const todoService = (function(){
 		for (const task of tasks) {
 			htmlDocList.append(createTaskElement(task))
 		}
-		for (let size = tasks.length; size < 10; size++) {
+		if (tasks.length < 10) {
+			for (let size = tasks.length; size < 10; size++) {
+				htmlDocList.append(newTaskElement())
+			}
+		} else {
 			htmlDocList.append(newTaskElement())
 		}
 

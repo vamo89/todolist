@@ -11,7 +11,7 @@
 /* Minimum acceptable size without scroll */
 body {
 	min-width: 600px;
-	min-height: 450px;
+	overflow-y: hidden;
 }
 
 /* Simple modifiers */
@@ -27,6 +27,10 @@ body {
 	border-top: 1px solid #ccc;
 }
 
+.link {
+	cursor: pointer;
+}
+
 /* Modified elements */
 button {
 	background-color: white;
@@ -35,6 +39,7 @@ button {
 	padding: 4px;
 	border-radius: 5px;
 	outline: 0;
+	cursor: pointer;
 }
 
 li {
@@ -43,7 +48,6 @@ li {
 	font-size: 16px;
 	height: 35px;
 }
-
 
 /* Elements */
 .header {
@@ -106,6 +110,7 @@ li {
 	width: 100%;
 	min-width: 600px;
 	min-height: 360px;
+	overflow-y: auto;
 }
 
 .working-area {
@@ -121,7 +126,13 @@ li {
 
 .working-area .list {
 	width: 65%;
+	min-width: 550px;
 	height: fit-content;
+}
+
+.working-area .list.side {
+	width: 55%;
+	min-width: 330px;
 }
 
 .working-area .list .list-toolbar {
@@ -157,16 +168,13 @@ li {
 	line-height: normal;
 }
 
-.working-area .list.side {
-	width: 55%;
-}
-
 .working-area .edit {
 	width: 40%;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	max-height: 500px;
 }
 
 .working-area .edit.hide {
@@ -197,25 +205,32 @@ li {
 .working-area .edit .title, .working-area .edit .description {
 	outline: 0;
 	border: 0;
-	width: 80%;
 	padding: 5px;
 }
 
 .working-area .edit .title:hover, .working-area .edit .description:hover {
-	outline: 1px solid #ccc;
+	box-shadow: 0 0 0 1pt #ccc;
+	border-radius: 4px;
+}
+
+.working-area .edit .title:focus, .working-area .edit .description:focus {
+	box-shadow: 0 0 0 1pt #33abf9;
+	border-radius: 4px;
 }
 
 .working-area .edit .title {
 	font-size: 22px;
-	margin: 10% auto 10px 30px;
+	margin: 40px auto 10px 30px;
 	background: url(images/task.png) left center no-repeat;
 	padding: 5px 10px 5px 36px;
+	width: 80%;
 }
 
 .working-area .edit .description {
 	font-size: 12px;
 	margin: 10px auto auto 66px;
 	resize: none;
+	width: 65%;
 }
 
 .working-area .edit .comments {

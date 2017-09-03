@@ -3,31 +3,31 @@
 		<meta charset="UTF-8">
 		<title>Victor Oliveira - ToDo List</title>
 		<link rel="stylesheet" href="index.css">
-		<script src="index.js" type="text/javascript"></script>
+		<script src="todoService.js" type="text/javascript"></script>
 		<script src="dragdrop.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div class="header">
 			<nav class="task-bar simple-bottom-border">
 				<span>
-					<img class="settings" src="images/settings.png">
-					<span>My Tasks</span>
-					<span class="light-text">Inbox</span>
-					<img src="images/plus.png">
+					<img class="settings link" src="images/settings.png" title="Settings">
+					<span class="link">My Tasks</span>
+					<span class="light-text link">Inbox</span>
+					<img class="link" src="images/plus.png" title="New Something">
 				</span>
 				<input class="searchbox" type="text" placeholder="Search"></input>
 				<span>
-					<span class="light-text">Help <img src="images/showmore-mini.png"></span>
-					<span class="light-text">Personal Projects <img src="images/photo.png"></span>
+					<span class="light-text link">Help <img src="images/showmore-mini.png"></span>
+					<span class="light-text link">Personal Projects <img src="images/photo.png"></span>
 				</span>
 			</nav>
 			<div class="area-context simple-bottom-border">
 				<div class="title">
 					<img src="images/photo.png">
 					My Personal Tasks
-					<img src="images/showmore-mini.png">
+					<img class="link" src="images/showmore-mini.png" title="Show More">
 				</div>
-				<img src="images/showless-mini.png">
+				<img class="link" src="images/showless-mini.png" title="Show Less">
 			</div>
 		</div>
 		<div class="main">
@@ -35,7 +35,7 @@
 				<div id="list" class="list">
 					<div class="list-toolbar simple-bottom-border">
 						<button onclick="todoService.addTask()">Add Task</button>
-						<img src="images/config.png">
+						<img class="link" src="images/config.png" title="Configuration">
 					</div>
 					<ul id="tasklist">
 						<!-- Tasks are added on loadTasks call -->
@@ -49,16 +49,16 @@
 							<img src="images/circle.png">
 						</span>
 						<span class="light-text">
-							<img src="images/calendar.png">
+							<img class="link" src="images/calendar.png" title="Set Due Date">
 							Due Date
 						</span>
 						<span>
-							<img src="images/favorite.png">
-							<img src="images/link.png">
-							<img src="images/attach.png">
-							<img src="images/showmore.png">
+							<img class="link" src="images/favorite.png" title="Favorite">
+							<img class="link" src="images/link.png" title="Link">
+							<img class="link" src="images/attach.png" title="Attach">
+							<img class="link" src="images/showmore.png" title="More Actions	">
 						</span>
-						<img class="close" src="images/close.png" onclick="todoService.closeEditArea()">
+						<img class="close link" src="images/close.png" title="Close" onclick="todoService.closeEditArea()">
 					</div>
 					<div class="form">
 						<input id="form-title" onblur="todoService.updateTask()" onkeydown="todoService.updateIfEnter(event)" class="title" type="text" placeholder="New Task">
