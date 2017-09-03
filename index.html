@@ -36,24 +36,7 @@
 						<button onclick="todoService.addTask()">Add Task</button>
 						<img src="images/config.png">
 					</div>
-					<ul>
-						<li class="task-elem" onclick="todoService.editTask()">
-							<img class="list-icon" src="images/task.png">Work it Harder
-						</li>
-						<li class="task-elem" onclick="todoService.editTask()">
-							<img class="list-icon" src="images/task.png">Make it better
-						</li>
-						<li class="task-elem" onclick="todoService.addTask()"></li>
-						<li class="task-elem" onclick="todoService.addTask()"></li>
-						<li class="task-elem" onclick="todoService.addTask()"></li>
-						<li class="task-elem" onclick="todoService.addTask()"></li>
-						<li class="task-elem" onclick="todoService.addTask()"></li>
-						<li class="task-elem" onclick="todoService.addTask()"></li>
-						<li class="task-elem" onclick="todoService.addTask()"></li>
-						<li class="task-elem" onclick="todoService.addTask()"></li>
-						<li class="task-elem" onclick="todoService.addTask()"></li>
-						<li class="task-elem" onclick="todoService.addTask()"></li>
-					</ul>
+					<ul id="tasklist"><!-- Tasks are added on loadTasks call --></ul>
 				</div>
 				<div id="edit" class="edit hide">
 					<div class="edit-bar simple-bottom-border">
@@ -85,5 +68,7 @@
 				</div>
 			</div>
 		</div>
+
+		<script type="text/javascript">todoService.loadTasks()</script>
 	</body>
 </html>
