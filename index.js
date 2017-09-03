@@ -28,7 +28,8 @@ var todoService = (function(){
 
 	function editTask(task) {
 		openEditArea()
-		console.log('edit: ' + task.id)
+		document.getElementById('form-title').value = task.title
+		document.getElementById('form-description').value = task.description
 	}
 
 	function loadTasks() {
