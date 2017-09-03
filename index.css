@@ -198,6 +198,11 @@ li {
 	outline: 0;
 	border: 0;
 	width: 80%;
+	padding: 5px;
+}
+
+.working-area .edit .title:hover, .working-area .edit .description:hover {
+	outline: 1px solid #ccc;
 }
 
 .working-area .edit .title {
