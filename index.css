@@ -103,7 +103,8 @@ li {
 }
 
 .main {
-	background: url(images/snow-mountains-background.jpg) center center no-repeat;
+	background: url(images/snow-mountains-background.jpg) center top no-repeat;
+	background-color: #13314a;;
 	position: absolute;
 	bottom: 0px;
 	top: 90px;
