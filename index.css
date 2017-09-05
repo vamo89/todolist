@@ -12,6 +12,7 @@
 body {
 	min-width: 600px;
 	overflow-y: hidden;
+	font-family: Arial;
 }
 
 /* Simple modifiers */
@@ -31,21 +32,40 @@ body {
 	cursor: pointer;
 }
 
+.margin-left {
+	margin-left: 15px;
+}
+
+.small-margin-left {
+	margin-left: 5px;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 0;
+}
+
+.light-placeholder::-webkit-input-placeholder {
+	color: #ccc;
+	font-weight: bold;
+}
+
 /* Modified elements */
 button {
 	background-color: white;
 	border: 1px solid #33abf9;
 	color: #33abf9;
-	padding: 4px;
-	border-radius: 5px;
+	padding: 6px 10px;
+	border-radius: 2px;
 	outline: 0;
 	cursor: pointer;
+	font-size: 14px;
 }
 
 li {
 	border-bottom: 1px solid #ccc;
-	margin-left: 15px;
-	font-size: 16px;
+	margin: 0px 25px;
+	font-size: 14px;
 	height: 35px;
 }
 
@@ -74,26 +94,42 @@ li {
 	line-height: normal;
 }
 
-.header .task-bar span {
+.header .task-bar span span {
 	height: 100%;
 	display: inline-block;
+	font-size: 14px;
 }
 
 .header .task-bar .settings {
-	padding: 10px;
+	padding: 12px;
+	border-right: 1px solid #ccc;
 }
 
 .header .task-bar .searchbox {
-	border-radius: 10px;
+	border-radius: 13px;
 	outline: 0;
 	background: url(images/search.png) left center no-repeat;
-	padding: 2px 5px 2px 15px;
+	background-position: 5px;
+	padding: 5px 0px 5px 25px;
 	width: 35%;
+	font-size: 14px;
+	border: 1px solid #ccc;
+}
+
+.header .area-context {
+	height: 56px;
+	position: relative;
 }
 
 .header .area-context .title {
 	text-align: center;
-	font-size: 30px;
+	font-size: 22px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+.header .area-context .title .photo {
+	height: 24px;
 }
 
 .header .area-context .title * {
@@ -105,9 +141,7 @@ li {
 .main {
 	background: url(images/snow-mountains-background.jpg) center top no-repeat;
 	background-color: #13314a;;
-	position: absolute;
-	bottom: 0px;
-	top: 90px;
+	top: 102px;
 	width: 100%;
 	min-width: 600px;
 	min-height: 360px;
@@ -146,7 +180,7 @@ li {
 	display: inline-block;
 	vertical-align: middle;
 	line-height: normal;
-	margin: 5px 15px;
+	margin: 10px 25px;
 }
 
 .working-area .list .task-elem .list-icon {
@@ -184,11 +218,20 @@ li {
 
 .working-area .edit .edit-bar {
 	height: fit-content;
+	font-weight: bold;
+	font-size: 12px;
+	display: flex;
+	flex-flow: row wrap;
 }
 
 .working-area .edit .edit-bar span {
 	margin: 5px 5px 5px 20px;
-	display: inline-block;
+	display: flex;
+	align-items: center;
+}
+
+.working-area .edit .edit-bar span * {
+	margin-right: 5px;
 }
 
 .working-area .edit .edit-bar .close {
@@ -236,7 +279,6 @@ li {
 
 .working-area .edit .comments {
 	background-color: #eee;
-	bottom: 0;
 	display: flex;
 }
 
@@ -249,4 +291,6 @@ li {
 	resize: none;
 	border: #ccc solid 1px;
 	width: 85%;
+	padding: 10px;
+	font-size: 12px;
 }

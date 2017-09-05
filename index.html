@@ -11,26 +11,26 @@
 			<nav class="task-bar simple-bottom-border">
 				<span>
 					<img class="settings link" src="images/settings.png" title="Settings">
-					<span class="link">My Tasks</span>
-					<span class="light-text link">Inbox</span>
-					<img class="link" src="images/plus.png" title="New Something">
+					<span class="link margin-left">My Tasks</span>
+					<span class="light-text link margin-left">Inbox</span>
+					<img class="link margin-left" src="images/plus.png" title="New Something">
 				</span>
-				<input class="searchbox" type="text" placeholder="Search"></input>
+				<input class="searchbox light-placeholder" type="text" placeholder="Search"></input>
 				<span>
 					<span class="light-text link">Help <img src="images/showmore-mini.png"></span>
-					<span class="light-text link">Personal Projects <img src="images/photo.png"></span>
+					<span class="light-text link margin-left">Personal Projects <img src="images/photo.png"></span>
 				</span>
 			</nav>
 			<div class="area-context simple-bottom-border">
 				<div class="title">
-					<img src="images/photo.png">
+					<img class="photo" src="images/photo.png">
 					My Personal Tasks
 					<img class="link" src="images/showmore-mini.png" title="Show More">
 				</div>
-				<img class="link" src="images/showless-mini.png" title="Show Less">
+				<img class="link bottom" src="images/showless-mini.png" title="Show Less">
 			</div>
 		</div>
-		<div class="main">
+		<div class="main bottom">
 			<div class="working-area">
 				<div id="list" class="list">
 					<div class="list-toolbar simple-bottom-border">
@@ -46,7 +46,7 @@
 						<span>
 							<img src="images/photo.png">
 							Victor Oliveira
-							<img src="images/circle.png">
+							<img class="small-margin-left" src="images/circle.png">
 						</span>
 						<span class="light-text">
 							<img class="link" src="images/calendar.png" title="Set Due Date">
@@ -64,7 +64,7 @@
 						<input id="form-title" onblur="todoService.updateTask()" onkeydown="todoService.updateIfEnter(event)" class="title" type="text" placeholder="New Task">
 						<textarea id="form-description" onblur="todoService.updateTask()" onkeydown="todoService.updateIfEnter(event)" class="description" rows="3" placeholder="Description"></textarea>
 					</div>
-					<div class="comments simple-top-border">
+					<div class="comments simple-top-border light-placeholder">
 						<img src="images/photo.png">
 						<textarea rows="4" placeholder="Write a comment..."></textarea>
 					</div>
