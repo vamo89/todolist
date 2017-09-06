@@ -1,18 +1,18 @@
 /* Reset css */
 * {
-	padding: 0;
-	margin: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
 	list-style: none;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
 }
 
 /* Minimum acceptable size without scroll */
 body {
+	font-family: Arial;
 	min-width: 600px;
 	overflow-y: hidden;
-	font-family: Arial;
 }
 
 /* Simple modifiers */
@@ -41,8 +41,8 @@ body {
 }
 
 .bottom {
-	position: absolute;
 	bottom: 0;
+	position: absolute;
 }
 
 .light-placeholder::-webkit-input-placeholder {
@@ -63,27 +63,27 @@ body {
 .align-center-middle *:before {
 	content: ' ';
 	display: inline-block;
-	vertical-align: middle;
 	height: 100%;
+	vertical-align: middle;
 }
 
 /* Modified elements */
 button {
 	background-color: white;
+	border-radius: 2px;
 	border: 1px solid #33abf9;
 	color: #33abf9;
-	padding: 6px 10px;
-	border-radius: 2px;
-	outline: 0;
 	cursor: pointer;
 	font-size: 14px;
+	outline: 0;
+	padding: 6px 10px;
 }
 
 li {
 	border-bottom: 1px solid #ccc;
-	margin: 0px 25px;
 	font-size: 14px;
 	height: 35px;
+	margin: 0px 25px;
 }
 
 textarea {
@@ -97,29 +97,23 @@ textarea {
 }
 
 .header .task-bar {
+	font-size: 14px;
 	height: 40px;
 }
 
-.header .task-bar span span {
-	height: 100%;
-	display: inline-block;
-	font-size: 14px;
-}
-
 .header .task-bar .settings {
-	padding: 12px;
 	border-right: 1px solid #ccc;
+	padding: 12px;
 }
 
 .header .task-bar .searchbox {
+	background: url(images/search.png) left 5px center no-repeat;
 	border-radius: 13px;
+	border: 1px solid #ccc;
+	font-size: 14px;
 	outline: 0;
-	background: url(images/search.png) left center no-repeat;
-	background-position: 5px;
 	padding: 5px 0px 5px 25px;
 	width: 35%;
-	font-size: 14px;
-	border: 1px solid #ccc;
 }
 
 .header .area-context {
@@ -128,10 +122,10 @@ textarea {
 }
 
 .header .area-context .title {
-	text-align: center;
 	font-size: 22px;
 	font-weight: bold;
 	margin-top: 5px;
+	text-align: center;
 }
 
 .header .area-context .title .photo {
@@ -144,13 +138,13 @@ textarea {
 }
 
 .main {
-	background: url(images/snow-mountains-background.jpg) center top no-repeat;
 	background-color: #13314a;;
+	background: url(images/snow-mountains-background.jpg) center top no-repeat;
+	min-height: 360px;
+	min-width: 600px;
+	overflow-y: auto;
 	top: 102px;
 	width: 100%;
-	min-width: 600px;
-	min-height: 360px;
-	overflow-y: auto;
 }
 
 .working-area {
@@ -160,19 +154,19 @@ textarea {
 
 .working-area .list, .working-area .edit {
 	background-color: white;
-	margin: 15px auto;
 	border-radius: 4px;
+	margin: 15px auto;
 }
 
 .working-area .list {
-	width: 65%;
-	min-width: 550px;
 	height: fit-content;
+	min-width: 550px;
+	width: 65%;
 }
 
 .working-area .list.side {
-	width: 55%;
 	min-width: 330px;
+	width: 55%;
 }
 
 .working-area .list .list-toolbar * {
@@ -181,15 +175,15 @@ textarea {
 
 .working-area .list .task-elem .list-icon {
 	height: 24px;
-	width: 24px;
 	margin-right: 15px;
+	width: 24px;
 }
 
 .working-area .list .task-elem:before {
 	content: ' ';
 	display: inline-block;
-	vertical-align: middle;
 	height: 100%;
+	vertical-align: middle;
 }
 
 .working-area .list .task-elem * {
@@ -198,12 +192,12 @@ textarea {
 }
 
 .working-area .edit {
-	width: 40%;
-	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	max-height: 500px;
+	position: relative;
+	width: 40%;
 }
 
 .working-area .edit.hide {
@@ -211,17 +205,17 @@ textarea {
 }
 
 .working-area .edit .edit-bar {
-	height: fit-content;
-	font-weight: bold;
-	font-size: 12px;
 	display: flex;
 	flex-flow: row wrap;
+	font-size: 12px;
+	font-weight: bold;
+	height: fit-content;
 }
 
 .working-area .edit .edit-bar span {
-	margin: 5px 5px 5px 20px;
-	display: flex;
 	align-items: center;
+	display: flex;
+	margin: 5px 5px 5px 20px;
 }
 
 .working-area .edit .edit-bar span * {
@@ -241,25 +235,25 @@ textarea {
 }
 
 .working-area .edit .title, .working-area .edit .description {
-	outline: 0;
 	border: 0;
+	outline: 0;
 	padding: 5px;
 }
 
 .working-area .edit .title:hover, .working-area .edit .description:hover {
-	box-shadow: 0 0 0 1pt #ccc;
 	border-radius: 4px;
+	box-shadow: 0 0 0 1pt #ccc;
 }
 
 .working-area .edit .title:focus, .working-area .edit .description:focus {
-	box-shadow: 0 0 0 1pt #33abf9;
 	border-radius: 4px;
+	box-shadow: 0 0 0 1pt #33abf9;
 }
 
 .working-area .edit .title {
+	background: url(images/task.png) left center no-repeat;
 	font-size: 22px;
 	margin: 40px auto 10px 30px;
-	background: url(images/task.png) left center no-repeat;
 	padding: 5px 10px 5px 36px;
 	width: 80%;
 }
@@ -281,6 +275,6 @@ textarea {
 
 .working-area .edit .comments textarea {
 	border: #ccc solid 1px;
-	width: 85%;
 	padding: 10px;
+	width: 85%;
 }
